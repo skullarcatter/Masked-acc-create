@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masked</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            border-radius: 8px;
+            overflow: hidden;
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .signup-container:hover {
+            transform: scale(1.02);
+        }
+
+        .signup-container h2 {
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .signup-form {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #666;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-group button {
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            filter: brightness(90%);
+        }
+
+        .form-footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Create an Account</h2>
+        <form class="signup-form" onsubmit="return createUser()">
+            <div class="form-group">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Create Account</button>
+            </div>
+        </form>
+        <div class="form-footer">
+            Already have an account? <a href="https://skullarcatter.github.io/Masked/#">Login</a>
+        </div>
+    </div>
+
+    <script>
+        function createUser() {
+            // Retrieve values from the form
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+
+            // Perform client-side validation (add more as needed)
+            if (newUsername.trim() === '' || newPassword.trim() === '') {
+                alert('Please fill this out.');
+                return false;
+            }
+
+            // Simulate sending the data to the server for processing
+            alert('Account could not load'); // Replace with actual server-side code
+            return true; // Prevent default form submission
+        }
+    </script>
+</body>
+</html>
